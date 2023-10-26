@@ -5,7 +5,7 @@ import { Auctions } from "./dataclass/Auctions";
 const app: Express = express();
 const port = 3000;
 
-// Define a simple route
+// Define a simple route asd
 app.get("/d", async (req: Request, res: Response) => {
   try {
     const auction: Auctions[] = await searchForItems("Helm of Narv ");
