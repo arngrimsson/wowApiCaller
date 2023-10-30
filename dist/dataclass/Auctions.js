@@ -21,22 +21,17 @@ class Auctions {
     ________________`;
     }
     updateFormattedValues() {
-        if (this._buyOut === 0) {
-            this._buyOutString = "0c";
-        }
         const gold = Math.floor(this._buyOut / 10000);
         const silver = Math.floor((this._buyOut % 10000) / 100);
         const copper = Math.floor(this._buyOut % 100);
         this._buyOutString = `${gold}g ${silver}s ${copper}c`;
-        if (this._bid === 0) {
-            this._bidString = "0c";
-        }
-        else {
-            const goldBid = Math.floor(this._bid / 10000);
-            const silverBid = Math.floor((this._bid % 10000) / 100);
-            const copperBid = Math.floor(this._bid % 100);
-            this._bidString = `${goldBid}g ${silverBid}s ${copperBid}c`;
-        }
+        const goldBid = Math.floor(this._bid / 10000);
+        const silverBid = Math.floor((this._bid % 10000) / 100);
+        const copperBid = Math.floor(this._bid % 100);
+        this._bidString = `${goldBid}g ${silverBid}s ${copperBid}c`;
+    }
+    get name() {
+        return this._name;
     }
     /**
      * Getter bid
