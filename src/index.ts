@@ -8,8 +8,10 @@ const port = 3000;
 app.get("/", async (req: Request, res: Response) => {
   try {
     const auction: Auctions[] = await searchForItems("silk cloth ");
-    console.log(auction.toString());
-    res.send(auction.toString());
+    auction.forEach((element) => {
+      element.toJSON();
+    });
+    res.send(auction);
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal server error");

@@ -18,9 +18,6 @@ async function searchForItems(itemName) {
         foundMatches.push(a);
     }
     foundMatches.sort((a, b) => b.buyOut - a.buyOut);
-    foundMatches.forEach((auction) => {
-        console.log(auction.toString());
-    });
     return foundMatches;
 }
 exports.searchForItems = searchForItems;

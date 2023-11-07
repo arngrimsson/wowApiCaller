@@ -14,6 +14,15 @@ export class Auctions {
     this.updateFormattedValues();
   }
 
+  toJSON() {
+    return {
+      bid: this._bidString,
+      buyOut: this._buyOutString,
+      quantity: this._quantity,
+      name: this._name,
+    };
+  }
+
   toString(): string {
     return `
     ________________
